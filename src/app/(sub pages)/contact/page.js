@@ -35,7 +35,7 @@ export default function Contact() {
             magic in response.
           </p>
         </div>
-        <div className='flex md:flex-wrap justify-center md:justify-around space-y-4 md:space-x-6'>
+        <div className='flex md:flex-nowrap flex-wrap justify-center md:justify-around space-y-4 md:space-x-6'>
           <Details />
           <Form />
         </div>
