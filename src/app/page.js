@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <FullScreenLoader />
-      <main className="relative flex h-full min-h-[66vh] overflow-hidden flex-col items-center bg-[#07021d3b]">
+      <main className="relative flex max-h-[66vh] min-h-screen overflow-hidden flex-col items-center bg-[#07021d3b]">
         {/* full-screen, semi-opaque bg image */}
         <Image
           priority
