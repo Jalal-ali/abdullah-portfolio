@@ -51,24 +51,24 @@
 
   /* glowing borderline under laptop  */
   .borderline {
-    border: .7px solid #ffda08cc;
+    border: .9px solid #d37c13;
     /* solid border */
     box-shadow:
-      0 0 5px #f5b422, 0 0 7px #ffbd03bf, 0 0 7px #ff840052, 0 0 3px #fde59ce0;
+      0 0 16px #d37c13, 0 0 11px #ffbd03bf, 0 0 14px #d37c13, 0 0 10px #fde59ce0;
   }
 
   .borderline2 {
-    border: .3px solid #efd76094;
+    border: .3px solid #d37d139d;
     /* solid border */
     box-shadow:
-      0 0 2px #ffbd4242, 0 0 2px #ffbd0345, 0 0 2px #ff84001f, 0 0 1px #fde59ce0;
+      0 0 2px #d37d13e0, 0 0 2px #ffbd0345, 0 0 2px #d37d13e0, 0 0 1px #d37d13e0;
   }
 
   .borderline3 {
-    border: .2px solid #ffcc3a00;
+    border: .1px solid #d37d1336;
     /* solid border */
     box-shadow:
-      0 0 1px #ffbc4273, 0 0 4px #ffbd0300, 0 0 2px #ff840052, 0 0 2px #fde59ce0;
+      0 0 1px #d37d132a, 0 0 4px #ffbd0300, 0 0 2px #d37d133b, 0 0 2px #fde59ce0;
   }
 .laptop {
   transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;/* adjust time as needed */
@@ -85,12 +85,12 @@
 }
 @keyframes glow {
   0%, 100% {
-    filter: drop-shadow(0 0 0 #ffb10844)
-            drop-shadow(0 0 0 #ffbc034f);
+    filter: drop-shadow(0 0 0 #d37c13)
+            drop-shadow(0 0 0 #d37c13);
   }
   50% {
-    filter: drop-shadow(0 0 1px #ff9c08cc)
-            drop-shadow(0 0 1px #ffbc03bf);
+    filter: drop-shadow(0 0 2px #d37d13e0)
+            drop-shadow(0 0 3px #d39013e1);
   }
 }
 

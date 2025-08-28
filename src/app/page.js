@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <FullScreenLoader />
-      <main className="relative flex min-h-screen overflow-hidden flex-col items-center bg-[#07021d3b]">
+      <main className="relative flex h-full min-h-[66vh] overflow-hidden flex-col items-center bg-[#07021d3b]">
         {/* full-screen, semi-opaque bg image */}
         <Image
           priority
@@ -44,7 +44,7 @@ export default function Home() {
               className="
         relative z-20 object-contain animate-float-lapto laptop
         
-        w-[44%] md:w-[20rem] lg:w-[24rem] mb-8 md:mb-24
+        w-[44%] md:w-[20rem] lg:w-[24rem] mb-6 md:mb-24
       "
             />
 

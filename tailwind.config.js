@@ -81,7 +81,7 @@ module.exports = {
             opacity: "0.8",
           },
           "100%": {
-            transform: "perspective(600px) rotateX(80deg) scale(1.1)",
+            transform: "perspective(600px) rotateX(80deg) scale(1)",
             opacity: "0",
             // boxShadow: "0 0 24px transparent",
             // borderColor: "#eab63e",
