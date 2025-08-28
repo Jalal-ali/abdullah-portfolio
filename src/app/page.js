@@ -44,7 +44,7 @@ export default function Home() {
               className="
         relative z-20 object-contain animate-float-lapto laptop
         
-        w-[44%] md:w-[20rem] lg:w-[24rem] mb-6 md:mb-24
+        w-[44%] md:w-[20rem] lg:w-[23.5rem] mb-6 md:mb-24
       "
             />
 

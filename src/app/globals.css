@@ -33,12 +33,10 @@
 
   .text-glow-stroke-neon {
     color: #090f17ea;
-    -webkit-text-stroke: .5px #edd7bdf0;
-    text-shadow:
-      0 0 1px #ffa114, 0 0 4px #ff8303, 0 0 2px #ff8400be, 0 0 2px #ffbf03cf;
-    letter-spacing: 4px;
-
-  }
+    -webkit-text-stroke: .7px #fdcc7fc7;
+    text-shadow: 0 0 4px #e76b1fe3, 0 0 5px #ffa700, 0 0 2px #ffe1c2be, 0 0 2px #ffd559cf;
+    letter-spacing: 2px;
+}
 
   .text-glow-stroke-purple {
     /* color: #071317ec;  */
