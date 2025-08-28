@@ -29,11 +29,11 @@ export default function Home() {
           >
             Muhammad <br /> Abdullah
           </h1>
-          <h2 className="text-amethyst-neon text-glow-stroke-purple mt-1 text-[1.5rem] font-light uppercase leading-snug md:text-[1.5rem]">
+          <h2 className="text-amethyst-neon text-glow-stroke-purple mt-1 text-[1rem] font-light uppercase leading-snug md:text-[1.5rem]">
             Software Developer
           </h2>
         </div>
-        <div className="relative z-10 flex w-full flex-1 items-center justify-center">
+        <div style={{ margin: "0 0 50% 0" }} className="relative z-10 flex w-full flex-1 items-center justify-center">
           {/* Wrapper for laptop + rings */}
           <div className="relative flex items-center justify-center">
             {/* Laptop */}
