@@ -22,7 +22,7 @@ export default function Home() {
         {/* HEADLINE */}
         <div className="z-50 pt-14 text-center">
           <h1
-            className="text-transparent text-[2rem] font-[500] uppercase leading-none md:text-[4rem] text-glow-stroke-neon"
+            className="text-transparent text-[3rem] font-[500] uppercase leading-none md:text-[4rem] text-glow-stroke-neon"
             style={{
               // textShadow: "0 0 10px #fcf699, 0 0 20px #fcf699, 0 0 40px #fcf699"
             }}
