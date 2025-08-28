@@ -50,7 +50,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="fixed flex h-1/2 w-full items-center justify-center mx-auto">
+    <div className="absolute z-0 flex h-1/2 w-full items-center justify-center mx-auto">
       <div
         className="relative flex w-max items-center justify-center mx-auto"
         style={{
