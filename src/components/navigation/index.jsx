@@ -26,8 +26,8 @@ const Navigation = () => {
         setMultiplier({ x: 1.8, y: 1.4 });
       } else {
         // Desktop
-        setRadius(200);
-        setMultiplier({ x: 2, y: 1.2 });
+        setRadius(65);
+        setMultiplier({ x: 4, y: 1.9 });
       }
     };
 
@@ -50,12 +50,12 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="fixed flex h-screen w-full items-center justify-center perspective-[1500px] mx-auto">
+    <div className="fixed flex h-1/2 w-full items-center justify-center mx-auto">
       <div
-        className="relative flex w-max items-center justify-between mx-auto"
+        className="relative flex w-max items-center justify-center mx-auto"
         style={{
-          transform: 'rotateX(40deg)',
-          transformStyle: 'preserve-3d',
+          // transform: 'rotateX(40deg)',
+          // transformStyle: 'preserve-3d',
         }}
       >
         {BtnList.map((btn, index) => {

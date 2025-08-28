@@ -19,6 +19,7 @@
   .custom-bg {
     @apply border border-solid border-accent/30 bg-background/20 shadow-glass-inset backdrop-blur-[6px] hover:shadow-glass-sm;
   }
+
   .custom-bg-2 {
     @apply border border-solid border-amethyst-neon/30 bg-background/20 shadow-glass-inset backdrop-blur-[6px] hover:shadow-glass-sm-2;
   }
@@ -26,21 +27,73 @@
   .text-stroke-neon {
     -webkit-text-stroke: 2px #eab53e;
     /* stroke thickness + neon color */
-    text-stroke: 2px #eab53e;
+    /* text-stroke: 2px #eab53e; */
     /* fallback */
   }
+
   .text-glow-stroke-neon {
- -webkit-text-stroke: 1px #eab63e18; /* neon stroke */
-  color: #071312e3; /* make sure the fill stays transparent */
-  text-shadow: 
-   0 0 2px #eab53e,
-    0 0 4px #eab53e,
-    0 0 0px #eab53e,
-    0 0 12px #eab53e
+    color: #090f17ea;
+    -webkit-text-stroke: .5px #edd7bdf0;
+    text-shadow:
+      0 0 1px #ffa114, 0 0 4px #ff8303, 0 0 2px #ff8400be, 0 0 2px #ffbf03cf;
+    letter-spacing: 4px;
+
   }
 
+  .text-glow-stroke-purple {
+    /* color: #071317ec;  */
+    /* -webkit-text-stroke: .5px #101034; */
+    text-shadow:
+      0 0 7px #5d4999f7, 0 0 4px #101034, 0 0 2px #101034, 0 0 2px #101034;
+    letter-spacing: 4px;
+
+  }
+
+  /* glowing borderline under laptop  */
+  .borderline {
+    border: .7px solid #ffda08cc;
+    /* solid border */
+    box-shadow:
+      0 0 5px #f5b422, 0 0 7px #ffbd03bf, 0 0 7px #ff840052, 0 0 3px #fde59ce0;
+  }
+
+  .borderline2 {
+    border: .3px solid #efd76094;
+    /* solid border */
+    box-shadow:
+      0 0 2px #ffbd4242, 0 0 2px #ffbd0345, 0 0 2px #ff84001f, 0 0 1px #fde59ce0;
+  }
+
+  .borderline3 {
+    border: .2px solid #ffcc3a00;
+    /* solid border */
+    box-shadow:
+      0 0 1px #ffbc4273, 0 0 4px #ffbd0300, 0 0 2px #ff840052, 0 0 2px #fde59ce0;
+  }
+.laptop {
+  transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;/* adjust time as needed */
+}
+  
+.laptop:hover {
+   transform: scale(1.05);
+  filter: drop-shadow(0 0 1px #ffb308cc)
+          drop-shadow(0 0 4px #ffbd03bf)
+          drop-shadow(0 0 3px #ff840052);
+           animation: glow 2s ease-in-out infinite;
+}
 
 }
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0.3px #ffb308cc)
+            drop-shadow(0 0 0.3px #ffbd03bf);
+  }
+  50% {
+    filter: drop-shadow(0 0 4px #ffb308cc)
+            drop-shadow(0 0 4px #ffb308cc);
+  }
+}
+
 
 @keyframes move {
   0% {

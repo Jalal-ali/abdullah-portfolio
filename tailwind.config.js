@@ -74,8 +74,8 @@ module.exports = {
         "ripple-neon": {
           "0%": {
             transform: "perspective(600px) rotateX(80deg) scale(0)",
-            boxShadow: "0 0 10px #eab53e, 0 0 20px #b16612, 0 0 30px #fcf699",
-            borderColor: "#eab53e",
+            // boxShadow: "0 0 10px #eab53e, 0 0 20px #b16612, 0 0 30px #fcf699",
+            // borderColor: "#eab53e",
           },
           "70%": {
             opacity: "0.8",
@@ -83,8 +83,8 @@ module.exports = {
           "100%": {
             transform: "perspective(600px) rotateX(80deg) scale(1.1)",
             opacity: "0",
-            boxShadow: "0 0 24px transparent",
-            borderColor: "#eab63e",
+            // boxShadow: "0 0 24px transparent",
+            // borderColor: "#eab63e",
           },
         },
         "float-laptop": {
@@ -95,12 +95,31 @@ module.exports = {
             transform: "translateY(-20px) rotateX(12deg) rotateZ(-1deg)",
           },
         },
+        "wiggle": {
+          "0%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(-2px)" },
+          "50%": { transform: "translateX(2px)" },
+          "75%": { transform: "translateX(-2px)" },
+          "100%": { transform: "translateX(0)" },
+        },
+         "glow-ring": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px #ff7b00, 0 0 40px #ff5100",
+            opacity: "0.8",
+          },
+          "50%": {
+            boxShadow: "0 0 40px #ff9933, 0 0 70px #ff6600",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "spin-slow": "spin 40s linear infinite",
         "spin-slow-reverse": "spin-reverse 40s linear infinite",
         'ripple-neon': 'ripple-neon 3s ease-out infinite',
         "float-laptop": "float-laptop 6s ease-in-out infinite",
+        "wiggle": "wiggle 1.5s ease-in-out infinite",
+        "glow-ring": "glow-ring 3s ease-in-out infinite",
       },
     },
   },
