@@ -76,21 +76,21 @@
   
 .laptop:hover {
    transform: scale(1.05);
-  filter: drop-shadow(0 0 1px #ffb308cc)
-          drop-shadow(0 0 4px #ffbd03bf)
-          drop-shadow(0 0 3px #ff840052);
+  /* filter: drop-shadow(0 0 0 #ffb308cc)
+          drop-shadow(0 0 0 #ffbd03bf)
+          drop-shadow(0 0 0 #ff840052); */
            animation: glow 2s ease-in-out infinite;
 }
 
 }
 @keyframes glow {
   0%, 100% {
-    filter: drop-shadow(0 0 0.3px #ffb308cc)
-            drop-shadow(0 0 0.3px #ffbd03bf);
+    filter: drop-shadow(0 0 0 #ffb10844)
+            drop-shadow(0 0 0 #ffbc034f);
   }
   50% {
-    filter: drop-shadow(0 0 4px #ffb308cc)
-            drop-shadow(0 0 4px #ffb308cc);
+    filter: drop-shadow(0 0 1px #ff9c08cc)
+            drop-shadow(0 0 1px #ffbc03bf);
   }
 }
 

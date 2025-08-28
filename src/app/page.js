@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import bg from '../../public/background/Homebackground-2.png';
-import laptop from '../../public/background/laptop4.png';
+import laptop from '../../public/background/laptop.png';
 import Navigation from '@/components/navigation';
 import FullScreenLoader from '@/components/FullScreenLoader';
 
@@ -22,14 +22,14 @@ export default function Home() {
         {/* HEADLINE */}
         <div className="z-50 pt-14 text-center">
           <h1
-            className="text-transparent text-[1.8rem] font-[500] uppercase leading-none md:text-[4rem] text-glow-stroke-neon"
+            className="text-transparent text-[2rem] font-[500] uppercase leading-none md:text-[4rem] text-glow-stroke-neon"
             style={{
               // textShadow: "0 0 10px #fcf699, 0 0 20px #fcf699, 0 0 40px #fcf699"
             }}
           >
             Muhammad <br /> Abdullah
           </h1>
-          <h2 className="text-amethyst-neon text-glow-stroke-purple mt-1 text-[1rem] font-light uppercase leading-snug md:text-[1.5rem]">
+          <h2 className="text-amethyst-neon text-glow-stroke-purple mt-1 text-[1.5rem] font-light uppercase leading-snug md:text-[1.5rem]">
             Software Developer
           </h2>
         </div>
