@@ -31,12 +31,22 @@
     /* fallback */
   }
 
-  .text-glow-stroke-neon {
+  /* .text-glow-stroke-neon {
     color: #090f17ea;
     -webkit-text-stroke: .7px #ffe67e;
     text-shadow: 0 0 08px #e76b1fe3, 0 0 4px #ffa700, 0 0 4px #ffe1c2be, 0 0 1px #ffd559cf;
     letter-spacing: 0px;
+} */
+ .text-glow-stroke-neon {
+    color: #090f17ea;                     /* Fills the text with dark color */
+    -webkit-text-stroke: .7px #ffe67e;    /* Adds a stroke around */
+    text-shadow: 
+       0 0 8px #e76b1fe3, 
+       0 0 4px #ffa700, 
+       0 0 4px #ffe1c2be, 
+       0 0 1px #ffd559cf;                 /* Glow effect */
 }
+
 
   .text-glow-stroke-purple {
     /* color: #071317ec;  */
