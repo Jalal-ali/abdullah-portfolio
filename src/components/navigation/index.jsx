@@ -4,7 +4,7 @@ import { BtnList } from '@/app/data';
 import NavButton from './NavButton';
 import React, { useEffect, useState } from 'react';
 
-const Navigation = () => {
+const Navigation = ({ setHovered }) => {
   const angleIncrement = 360 / BtnList.length;
 
   const [rotation, setRotation] = useState(0);
@@ -27,7 +27,7 @@ const Navigation = () => {
       } else {
         // Desktop
         setRadius(65);
-        setMultiplier({ x: 4, y: 1.9 });
+        setMultiplier({ x: 4.5, y: 1.9 });
       }
     };
 
@@ -67,6 +67,7 @@ const Navigation = () => {
 
           return (
             <NavButton
+            setHovered={setHovered}
               key={btn.label}
               x={x}
               y={y}
