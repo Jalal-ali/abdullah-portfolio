@@ -1,7 +1,7 @@
 "use client";
 import { projectsData } from "@/app/data"; // adjust path
 import Image from "next/image";
-import bg from "../../../../../public/background/projects-background.png";
+import bg from "../../../../../public/background/project-bg.png";
 import { motion } from "framer-motion";
 
 
@@ -26,7 +26,7 @@ export default function ProjectPage({ params }) {
         sizes="100vw"
         src={bg}
         alt="background-image"
-        className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-30 blur-[1px]"
+        className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-90 blur-[1px]"
       />
       {/* HEADLINE */}
         <div className="z-50 py-8 text-center">
@@ -52,7 +52,7 @@ export default function ProjectPage({ params }) {
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="custom-bg w-full md:max-w-xl mx-auto p-4 sm:p-6 md:p-8 rounded-xl flex items-center justify-center"
+        className="custom-bg-abt w-full md:max-w-xl mx-auto p-4 sm:p-6 md:p-8 rounded-xl flex items-center justify-center"
       >
 
         <div className="w-full space-y-4 text-center">

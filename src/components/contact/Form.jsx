@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { Toaster, toast } from 'sonner';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const container = {
   hidden: { opacity: 0 },
@@ -22,6 +22,7 @@ const item = {
 };
 
 export default function Form() {
+  const [launch, setLaunch] = useState(false);
   const {
     register,
     handleSubmit,
@@ -80,9 +81,15 @@ export default function Form() {
       reply_to: data.email,
       message: data.message,
     };
+    setLaunch(true);
+
+    // Reset rocket after 3s (optional)
+    setTimeout(() => setLaunch(false), 3000);
 
     sendEmail(templateParams);
   };
+
+ 
 
   return (
     <>
@@ -92,7 +99,7 @@ export default function Form() {
         initial="hidden"
         animate="show"
         onSubmit={handleSubmit(onSubmit)}
-        className="flex w-full custom-bg border border-ember-neon p-12 rounded-lg max-w-md flex-col items-center justify-center space-y-4"
+        className="flex w-full custom-bg-abt border border-ember-neon p-12 rounded-lg max-w-md flex-col items-center justify-center space-y-4"
       >
         <motion.input
           variants={item}
@@ -105,7 +112,7 @@ export default function Form() {
               message: 'Name should be atleast 3 characters long.',
             },
           })}
-          className="custom-bg w-full rounded-md p-2 text-foreground shadow-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+          className="custom-bg-abt w-full rounded-md p-2 text-foreground shadow-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
         />
         {errors.name && (
           <span className="inline-block self-start text-accent">
@@ -117,7 +124,7 @@ export default function Form() {
           type="email"
           placeholder="email"
           {...register('email', { required: 'This field is required!' })}
-          className="custom-bg w-full rounded-md p-2 text-foreground shadow-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+          className="custom-bg-abt w-full rounded-md p-2 text-foreground shadow-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
         />
         {errors.email && (
           <span className="inline-block self-start text-accent">
@@ -138,20 +145,79 @@ export default function Form() {
               message: 'Message should be more than 50 characters',
             },
           })}
-          className="custom-bg w-full rounded-md p-2 text-foreground shadow-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+          className="custom-bg-abt w-full rounded-md p-2 text-foreground shadow-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
         />
         {errors.message && (
           <span className="inline-block self-start text-accent">
             {errors.message.message}
           </span>
         )}
-
-        <motion.input
+        {/* <motion.input
           variants={item}
           value="Cast your message!"
-          className="cursor-pointer rounded-md border border-solid border-accent/30 bg-background px-10 py-4 capitalize text-foreground shadow-lg backdrop-blur-sm hover:shadow-glass-sm focus:outline-none focus:ring-2 focus:ring-accent/50"
+          className="cursor-pointer py-2.5 px-3 rounded-md border border-ember-neon bg-yellow-400/10 backdrop-blur-md  text-white hover:shadow-[inset_0_4px_12px_rgba(251,191,36,0.25)]"
           type="submit"
+        /> */}
+
+        <AnimatePresence mode="wait">
+  {!launch ? (
+    <motion.input
+      key="submit"
+      type="submit"
+      value="Cast your message!"
+      className="cursor-pointer py-2.5 px-5 rounded-md border border-ember-neon bg-yellow-400/10 backdrop-blur-md text-white font-semibold tracking-wide shadow-sm hover:shadow-[0_0_10px_#ffb627]"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    />
+  ) : (
+    <motion.div
+      key="rocket"
+      initial={{ scale: 1, opacity: 1 }}
+      animate={{ x: 400, opacity: 0 }}
+      transition={{ duration: 1.4, ease: "easeIn" }}
+      className="relative flex flex-col items-center"
+    >
+      {/* 🚀 Rocket Body */}
+      <motion.div
+        initial={{ x: 0, rotate: 90 }}
+        animate={{ 
+          x: [0, -2, 0, 2, 0], // subtle shake
+        }}
+        transition={{ duration: 0.4, repeat: 3 }}
+        className="relative w-8 h-16 bg-gradient-to-b from-gray-200 to-gray-500 rounded-full border border-white shadow-lg"
+      >
+        {/* Nose Cone */}
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-0 h-0 
+                        border-l-[16px] border-r-[16px] border-b-[20px] 
+                        border-l-transparent border-r-transparent border-b-gray-400" />
+
+        {/* Windows */}
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-sky-400 border border-white shadow-md" />
+
+        {/* Side Fins */}
+        <div className="absolute -bottom-2 -left-3 w-4 h-4 bg-red-500 rotate-45 rounded-sm shadow-md" />
+        <div className="absolute -bottom-2 -right-3 w-4 h-4 bg-red-500 -rotate-45 rounded-sm shadow-md" />
+
+        {/* 🔥 Flames */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0.8 }}
+          animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
+          transition={{ repeat: Infinity, duration: 0.3 }}
+          className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-6 h-10 bg-gradient-to-b from-yellow-400 via-orange-500 to-red-600 rounded-full blur-md"
         />
+      </motion.div>
+
+      {/* Glowing Exhaust Trail */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: [0.8, 0.4, 0], scale: [1, 1.2, 0.9], y: [0, 60, 120] }}
+        transition={{ duration: 2.4, ease: "easeOut" }}
+        className="absolute top-12 left-1/2 -translate-x-1/2 w-4 h-40 bg-gradient-to-b from-yellow-300 via-orange-500 to-transparent blur-xl rounded-full"
+      />
+    </motion.div>
+  )}
+</AnimatePresence>
+
       </motion.form>
     </>
   );

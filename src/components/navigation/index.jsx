@@ -27,7 +27,7 @@ const Navigation = ({ setHovered }) => {
       } else {
         // Desktop
         setRadius(65);
-        setMultiplier({ x: 4.5, y: 1.9 });
+        setMultiplier({ x: 4.5, y: 2 });
       }
     };
 
@@ -49,6 +49,17 @@ const Navigation = ({ setHovered }) => {
     return () => cancelAnimationFrame(frame);
   }, []);
 
+  const [visibleButtons, setVisibleButtons] = React.useState([]);
+
+React.useEffect(() => {
+  // after loader finishes
+  BtnList.forEach((btn, i) => {
+    setTimeout(() => {
+      setVisibleButtons((prev) => [...prev, btn.label]); // add one by one
+    }, i * 300); // stagger delay
+  });
+}, []);
+
   return (
     <div className="absolute z-0 flex h-1/2 w-full items-center justify-center mx-auto">
       <div
@@ -58,7 +69,7 @@ const Navigation = ({ setHovered }) => {
           // transformStyle: 'preserve-3d',
         }}
       >
-        {BtnList.map((btn, index) => {
+        {/* {BtnList.map((btn, index) => {
           const angleDeg = index * angleIncrement + rotation;
           const angleRad = (angleDeg * Math.PI) / 180; // ✅ fixed denominator
 
@@ -77,7 +88,28 @@ const Navigation = ({ setHovered }) => {
               }}
             />
           );
-        })}
+        })} */}
+        {BtnList.map((btn, index) => {
+  const angleDeg = index * angleIncrement + rotation;
+  const angleRad = (angleDeg * Math.PI) / 180;
+
+  const x = radius * Math.cos(angleRad) * multiplier.x;
+  const y = radius * Math.sin(angleRad) * multiplier.y;
+
+  if (!visibleButtons.includes(btn.label)) return null; // show only after timed
+
+  return (
+    <NavButton
+      setHovered={setHovered}
+      key={btn.label}
+      x={x}
+      y={y}
+      index={index}
+      {...btn}
+    />
+  );
+})}
+
       </div>
     </div>
   );

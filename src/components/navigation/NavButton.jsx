@@ -16,56 +16,57 @@ import {
 const getIcon = (icon) => {
   switch (icon) {
     case 'about':
-      return <User className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <User className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     case 'projects':
-      return <Palette className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Palette className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     case 'qualifications':
-      return <Briefcase className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Briefcase className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     case 'contact':
-      return <Phone className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Phone className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     case 'github':
-      return <Github className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Github className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     case 'linkedin':
-      return <Linkedin className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Linkedin className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     case 'resume':
-      return <Notebook className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Notebook className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
     default:
-      return <Home className="h-auto w-full md:w-[2.5rem] lg:w-[2rem]" strokeWidth={1.5} />;
+      return <Home className="icon-glow h-auto w-full md:w-[2.5rem] lg:w-[2.2rem] " strokeWidth={1.5} />;
   }
 };
 
-const NavButton = ({ x, y, label, link, icon, newTab, setHovered }) => {
-  return (
-    <div
-      className="absolute z-50 cursor-pointer mx-auto"
-      style={{ transform: `translate(${x}px, ${y}px)` }}
-    >
-      <Link
-        href={link}
-        target={newTab ? "_blank" : "_self"}
-        aria-label={label}
-        name={label}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="group  custom-bg flex items-center justify-center rounded-full text-foreground transition-colors duration-300 bg-[ember-neon]/20"
+  const NavButton = ({ x, y, label, link, icon, newTab, setHovered }) => {
+    return (
+      <div
+        className="absolute z-50 cursor-pointer mx-auto"
+        style={{ transform: `translate(${x}px, ${y}px)`,
+       }}
       >
-        <span className="relative flex flex-col items-center h-14 md:h-[4.5rem] lg:h-[4rem] w-14 md:w-[4.5rem] lg:w-[4rem] p-4 text-ember-neon">
-          {/* Icon */}
-          <span className="text-lg text-[#ff9b1b] shadow-lg">
-            {getIcon(icon)}
+        <Link
+          href={link}
+          target={newTab ? "_blank" : "_self"}
+          aria-label={label}
+          name={label}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className="group nav-button custom-bg flex items-center justify-center rounded-full text-foreground transition-colors duration-300 bg-[ember-neon]/20"
+        >
+          <span className="relative flex flex-col items-center h-14 md:h-[4.5rem] lg:h-[4rem] w-14 md:w-[4.5rem] lg:w-[4rem] p-4 text-ember-neon">
+            {/* Icon */}
+            <span className="text-lg text-[#ffcd7f] shadow-lg">
+              {getIcon(icon)}
+            </span>
+
+            <span className="peer absolute left-0 top-0 h-full w-full bg-transparent" />
+
+            {/* Label (hidden until hover) */}
+            <span className="mt-4 rounded-md px-2 py-1 text-sm md:text-md text-[#f7ba48] shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {label}
+            </span>
           </span>
+        </Link>
 
-          <span className="peer absolute left-0 top-0 h-full w-full bg-transparent" />
-
-          {/* Label (hidden until hover) */}
-          <span className="mt-4 rounded-md px-2 py-1 text-sm md:text-md text-ember-neon shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {label}
-          </span>
-        </span>
-      </Link>
-
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
 export default NavButton;

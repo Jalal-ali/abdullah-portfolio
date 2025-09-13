@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Image from "next/image";
-import bg from "../../../../public/background/projects-background.png";
+import bg from "../../../../public/background/project-bg.png";
 import Carousel from '@/components/qualifications/Carousel'
 
 const page = () => {
@@ -27,7 +27,7 @@ const page = () => {
                     sizes="100vw"
                     src={bg}
                     alt="background-image"
-                    className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-30 blur-[2px] bg-black"
+                    className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-80 blur-[0.2px] bg-black"
                 />
                 <Carousel />
             

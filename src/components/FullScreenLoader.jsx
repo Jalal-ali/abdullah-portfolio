@@ -7,7 +7,7 @@ const FullScreenLoader = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500); // 2 sec
+    const timer = setTimeout(() => setLoading(false), 300); 
     return () => clearTimeout(timer);
   }, []);
 

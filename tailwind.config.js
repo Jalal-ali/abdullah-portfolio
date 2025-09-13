@@ -34,7 +34,7 @@ module.exports = {
         // Purples for accent + neon
         amethyst: {
           700: "#5c426c", // muted purple
-          neon: "#e3a4e8", // neon purple (subtitle)
+          neon: "#fc83ff", // neon purple (subtitle)
         },
 
       },
@@ -45,7 +45,7 @@ module.exports = {
       boxShadow: {
         "glass-inset": "inset 0 17px 5px -9px rgba(254,254,91, 0.05)",
         "glass-sm": "5px 5px 20px 0px rgba(254,254,91, 0.3)",
-        "glass-sm-2": "5px 5px 20px 0px #e4a4e83f",
+        "glass-sm-2": "5px 5px 20px 0px #f446ff3f",
         "neon-orange":
           "0 0 6px #eab53e, 0 0 18px #b16612, inset 0 0 6px #fcf699",
         "neon-purple":

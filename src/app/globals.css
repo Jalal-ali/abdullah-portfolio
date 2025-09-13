@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 @layer base {
   :root {
@@ -15,9 +17,17 @@
   .pause {
     animation-play-state: paused;
   }
+  .custom-bg-abt {
+  @apply 
+    border border-solid border-[#ffcd5bcc]  /* golden border */
+    bg-[#00000020]                          /* subtle transparent dark bg */
+    backdrop-blur-[6px]                     /* blur like neon glow */
+    shadow-[0_0_0px_#ff8400,0_0_0px_#ffaa2a,0_0_6px_orangered] /* neon shadows */
+    hover:shadow-[0_0_1px_#ff8400,0_0_2px_#ffaa2a,0_0_8px_orangered];
+}
 
   .custom-bg {
-    @apply border border-solid border-[#ffbe3e7a] bg-background/20 shadow-glass-inset backdrop-blur-[6px] hover:shadow-glass-sm;
+    @apply border border-solid border-[#eab63e98] bg-background/20 shadow-glass-inset backdrop-blur-[6px] hover:shadow-glass-sm;
   }
 
   .custom-bg-2 {
@@ -47,15 +57,55 @@
        0 0 1px #ffd559cf;  
 } */
   /* neww --------------------  */
-  .text-glow-stroke-neon {
+.text-glow-stroke-neon {
+    font-family: "Varela Round", sans-serif;
+
+  /* font-weight: 400; */
+  font-style: normal;
     --color: #ffffffcf;
     --stroke: #ffffff;
     --blur: 5rem 133px;
-    font-size: 6rem;
-    color: #090f17f5;
-    -webkit-text-stroke: .5px #ffd2a3;
-    text-shadow: 0 0 2px #ffd2ab, 0 0 3px #ffcf00, 0 0 3px #ff8400cf, 0 0 3px #ffbd00fc, 0 0 4px #ff7a1c;
-  }
+    letter-spacing: 4px;
+    /* text-align: end; */
+    color: #000e1700;
+    -webkit-text-stroke: .8px #ffb03a ;
+    /* filter: drop-shadow(0 0 1px #d48419) drop-shadow(0 0 1px #ffaa2abe) drop-shadow(0 0 1px orangered) drop-shadow(0 0 3px rgba(255, 166, 0, 0.397)) drop-shadow(0 0 1px rgba(255, 68, 0, 0.329)); */
+    /* text-shadow: 0 0 2px #ffaa2a, 0 0 3px yellow, 0 0 3px orange, 0 0 6px orangered; */
+    /* text-shadow: 0 0 1px #ffd2ab, 0 0 1px #DFB851, 0 0 1px #ff8400cf, 0 0 2px #ffbd00fc, 0 0 4px #ff7a1c; */
+    filter:
+    drop-shadow(0 0 0.2px white) drop-shadow(0 0 0.8px black) drop-shadow(0 0 1px rgba(255, 68, 0, 0.753)) drop-shadow(0 0 0px #eab53e) drop-shadow(0 0 0px orangered)
+     drop-shadow(0 0 14px rgba(255, 94, 0, 0.37));
+    }
+#about.text-glow-stroke-neon {
+  font-family: "Varela Round", sans-serif;
+  /* font-weight: 400; */
+    --color: #ffffffcf;
+    --stroke: #ffffff;
+    --blur: 5rem 133px;
+    letter-spacing: 4px;
+    /* text-align: end; */
+    color: #000e1700;
+    -webkit-text-stroke: .8px #ffd17e ;
+    /* filter: drop-shadow(0 0 1px #d48419) drop-shadow(0 0 1px #ffaa2abe) drop-shadow(0 0 1px orangered) drop-shadow(0 0 3px rgba(255, 166, 0, 0.397)) drop-shadow(0 0 1px rgba(255, 68, 0, 0.329)); */
+    /* text-shadow: 0 0 2px #ffaa2a, 0 0 3px yellow, 0 0 3px orange, 0 0 6px orangered; */
+    /* text-shadow: 0 0 1px #ffd2ab, 0 0 1px #DFB851, 0 0 1px #ff8400cf, 0 0 2px #ffbd00fc, 0 0 4px #ff7a1c; */
+    filter:
+    drop-shadow(0 0 0.2px white) drop-shadow(0 0 0.8px black) drop-shadow(0 0 1px rgba(255, 68, 0, 0.753)) drop-shadow(0 0 0px #eab53e) drop-shadow(0 0 3px orangered)
+     drop-shadow(0 0 14px rgba(255, 94, 0, 0.37));
+    }
+#date {
+  font-family: "Varela Round", sans-serif;
+    /* filter: drop-shadow(0 0 1px #d48419) drop-shadow(0 0 1px #ffaa2abe) drop-shadow(0 0 1px orangered) drop-shadow(0 0 3px rgba(255, 166, 0, 0.397)) drop-shadow(0 0 1px rgba(255, 68, 0, 0.329)); */
+    /* text-shadow: 0 0 2px #ffaa2a, 0 0 3px yellow, 0 0 3px orange, 0 0 6px orangered; */
+    /* text-shadow: 0 0 1px #ffd2ab, 0 0 1px #DFB851, 0 0 1px #ff8400cf, 0 0 2px #ffbd00fc, 0 0 4px #ff7a1c; */
+    filter:
+    drop-shadow(0 0 0px white) drop-shadow(0 0 0px black) drop-shadow(0 0 0px #eab53e) drop-shadow(0 0 3px rgba(255, 68, 0, 0.404))
+     drop-shadow(0 0 14px rgba(255, 94, 0, 0.37));
+    }
+    .theme-shadow{
+      filter:
+    drop-shadow(0 0 0.2px rgba(255, 255, 255, 0.575)) drop-shadow(0 0 0.8px rgba(0, 0, 0, 0.562)) drop-shadow(0 0 0px #eab63e6b) drop-shadow(0 0 14px rgba(255, 94, 0, 0.281));
+    }
 
   .text-glow-stroke-purple {
     /* color: #071317ec; */
@@ -65,10 +115,11 @@
   }
 
   /* glowing borderline under laptop  */
-  .borderline {
-    border: 2px solid #ffb307;
-    box-shadow: 0 0 8px #ffb23f, 0 0 5px #ffa000bf, 0 0 7px #ff8d00, 0 0 5px #ffa500;
-  }
+.borderline {
+    border: 1px solid #ffb202;
+    box-shadow:0 0 5px #ecbe5cda, 0 0 8px #ffaa2abe, 0 0 11px #ff8d00, 0 0 6px rgb(255, 136, 0),  0 0 5px rgb(255, 136, 0), 0 0 1px rgb(255, 136, 0), 0 0 7px rgb(176, 136, 0);
+}
+
 
   .borderline2 {
     border: .3px solid #d37d139d;
@@ -122,4 +173,21 @@
   100% {
     transform: translate(100px, 100px);
   }
+}
+ /* 0 0 2px #ffaa2a, 0 0 3px yellow, 0 0 3px orange, 0 0 6px orangered; */
+ /* filter: drop-shadow(0 0 0.3px #ffbd22b4) drop-shadow(0 0 0.7px #ffbc03a1) drop-shadow(0 0 .8px #ff84003f); */
+/* .icon-glow {
+  filter: drop-shadow(0 0 0.3px #ffaa2a) drop-shadow(0 0 0.7px yellow) drop-shadow(0 0 .4px orange);
+  transition: filter 0.3s ease-in-out;
+} */
+ .icon-glow {
+  filter:
+  drop-shadow(0 0 0.2px white) drop-shadow(0 0 0.8px black) drop-shadow(0 0 1px rgba(86, 18, 0, 3.753)) drop-shadow(0 0 0px #eab53e) drop-shadow(0 0 1px orangered)
+     drop-shadow(0 0 6px rgba(55, 94, 0, 0.37)); 
+  /* drop-shadow(0 0 3px #eab63e85)   
+    drop-shadow(0 0 .2px orangered)   
+    drop-shadow(0 0 0px rgba(255, 255, 0, 0.39))     
+    drop-shadow(0 0 0px rgba(255, 166, 0, 0.397))      
+    drop-shadow(0 0 0px rgba(255, 68, 0, 0.329)); */
+  transition: filter 0.3s ease-in-out;
 }
